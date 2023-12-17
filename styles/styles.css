@@ -203,6 +203,15 @@ h2{
     left:40%;
     text-align: left;
 }
+.mainImage{
+    position: absolute;
+    top:30%;
+    left:25%;
+    height:800px;
+    width: 800px;
+    opacity: 80%;
+    border-radius: 30%;
+}
 @media only screen and (max-width: 600px) {
     h1{
         position: relative;
