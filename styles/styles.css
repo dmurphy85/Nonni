@@ -1,0 +1,201 @@
+body{
+    background-image: URL("../images/veniceCanal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+        background-color: #444;
+    padding-top: 40px;
+    font: 15px/1.3 Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+ul {
+    list-style-image: url("../images/starImageSmall.png");
+    z-index: 2000;
+  }
+li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    color:#ffffff;
+}  
+table {margin-left:auto;
+    margin-right:auto;
+    margin-top:300px;
+    border:#000000;
+    width:90%;
+    color: white;
+   
+}
+form{
+    position: relative;
+    left:35%;
+    margin-top: 20%;
+
+   border: solid;
+   width:30%;
+}
+article{
+    padding-top: 20%;
+    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    color:#ffffff;
+}
+.about{
+    padding-top: 20%;
+    margin-left:20%;
+    text-align: left;
+    font-size: 14x;
+    color:#ffffff;
+}
+button{
+    font-size: x-large;
+   background-color: red;
+}
+
+/* Set the list image as background image*/
+/*ul::before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+
+    /* Height of the list image*/
+
+
+  
+
+
+img{
+    height:10px;
+    width:10px;
+}*/
+footer{
+    position: fixed;
+    text-align: center;
+    bottom: 5px;
+    padding-left:40%;
+  }
+button{
+    background-color: #db0c0c;
+    opacity: 80%;
+    color:white;
+}
+
+tr:nth-child(odd){background-color: #1509c6}
+tr:nth-child(even){background-color: rgb(170, 14, 24)}
+tr{
+    height:50px;
+}
+td{
+    padding-left:10px;
+}
+.rightLink {
+    float:right;
+    text-align: right;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    position:absolute;
+    top:1px;
+    left:0px;
+    width: 100%;
+    background-color: #025505;
+    
+    overflow: hidden;
+    z-index: 1000px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav i {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 4px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: red;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: red;
+    color: rgb(255, 255, 255);
+}
+/* Add a color to the active/current link */
+.topnav a.active:hover {
+    background-color: red;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* Right-aligned section inside the top navigation */
+.banner{
+    width: 100%;
+    height: 250px;
+  }
+
+h1{
+    position: relative;
+    left:45%;
+    width: 20%;
+}
+h2{
+    position: relative;
+    margin-top: 20%;
+}
+.aboutUsTitle{
+    font-size: 28px;
+}
+.title {
+    top: 240px;
+    position: relative;
+    left: 40%;
+}
+.hours{
+    top: 280px;
+    position: relative;
+    left:40%;
+    text-align: left;
+}
+@media only screen and (max-width: 600px) {
+    h1{
+        position: relative;
+        left:40%;
+        width: 20%;
+    }
+    
+    .topnav-right {
+        float: left;
+    }
+    .topnav a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 12px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    .topnav i {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 10px 4px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+}

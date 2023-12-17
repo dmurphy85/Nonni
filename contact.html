@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Contact Nonni's</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+<link rel="stylesheet" href="styles/styles.css?v=13">
+<link rel="stylesheet" href="styles/progress.css?v=1">
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="topnav-right">
+        <img src="images/Web Banner Signature Home Nonni.png" class="banner">
+      <a href="index.html">Home</a><i class="fa fa-angle-double-down"></i>
+      <a href="menu.html">Menu</a><i class="fa fa-angle-double-down"></i>
+      <a class="active" href="contact.html">Contact</a><i class="fa fa-angle-double-down"></i>
+      <a href="hours.html">Restaurant Hours</a><i class="fa fa-angle-double-down"></i>
+      <a href="about.html">About Us</a><i class="fa fa-angle-double-down"></i>
+      <span class='rightLink'><a href="index.html">Restaurant Home</a><i class="fa fa-angle-double-down"></i></span>
+    </div>
+  </div><h1 class="title">Contact Us</h1>
+  <form onSubmit="return formSubmit(this)">
+    <p>
+        Email:
+        <br/>
+        <input type="email" name="email" id="email" required onblur="progress(this)"/>
+    </p>
+    <p>
+        First Name:
+        <br/>
+        <input type="text" name="firstName" id="firstName" required onBlur="progress(this)"/>
+    </p>
+    <p>
+        Last Name:
+        <br/>
+        <input type="text" name="lastName" id="lastName" onBlur="progress(this)"required/>
+    </p>
+    <p>
+        City:
+        <br/>
+        <input type="text" name="city" id="city" onBlur="progress(this)"required/>
+    </p>
+    <p>
+        State:
+        <br/>
+        <input type="text" name="state" id="state" onBlur="progress(this)"required/>
+    </p>
+    <p>
+        Zip:
+        <br/>
+        <input type="text" name="zipCode" id="zipCode" onBlur="progress(this)" required/>
+    </p>
+    <p>
+        <button>Send</button>
+    </p>
+    <div class="circle" id="progressPie">
+        <span></span>
+      </div>
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
+  <script src="scripts/progress.js"></script>
+  <script>
+    const email = document.getElementById("email");
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const city = document.getElementById("city");
+
+    const state = document.getElementById("state");
+    const zipCode = document.getElementById("zipCode");
+
+    function formSubmit(frm)
+    {
+        const data={
+            email:frm.email.value,
+            lastName:frm.lastName.value,
+            firstName:frm.firstName.value,
+            city:frm.city.value,
+            state:frm.state.value,
+            zipCode:frm.zipCode.value
+        }
+
+        console.log("DATA", data);
+        alert("Your message has been sent");
+        return false;
+    }
+    let progressValue=0;
+    function progress (fld)
+    {
+
+        progressValue=0;
+        if(email.value!=="")
+        {
+            progressValue+=.1666;
+        }
+        if(lastName.value!=="")
+        {
+            progressValue+=.1666;
+            initCap(lastName);
+        }
+        if(firstName.value!=="")
+        {
+            progressValue+=.1666;
+            initCap(firstName);
+
+        }
+        if(city.value!=="")
+        {
+            progressValue+=.1666;
+            initCap(city);
+
+        }
+        if(state.value!=="")
+        {
+            progressValue+=.1666;
+            initCap(state);
+
+        }
+        if(zipCode.value!=="")
+        {
+            progressValue+=.1666;
+            initCap(zipCode);
+        }
+        $('#progressPie').circleProgress({
+            value: progressValue,
+            fill: {gradient: [['#0681c4', .5], ['#4ac5f8', .5]], gradientAngle: Math.PI / 4}
+        }).on('circle-animation-progress', function(event, progress, stepValue) {
+            $(this).find('strong').text(stepValue.toFixed(2).substr(1));
+        });
+
+    }
+    function initCap(fld)
+    {
+        const str = fld.value+"";
+        fld.value= str.toLowerCase().replace(/(?:^|\s)[a-z]/g, function (m) {
+            return m.toUpperCase();
+        });
+    }
+  </script>
+</body>
+</html>
